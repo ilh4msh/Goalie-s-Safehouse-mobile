@@ -93,3 +93,37 @@ Jawab pertanyaan-pertanyaan berikut di file README.md pada folder root:
     Menambah variabel global atau mengubah struktur widget besar → perlu Hot Restart.
 
 Melakukan add-commit-push ke suatu repositori baru di GitHub.
+
+
+## Tugas 8
+
+Checklist untuk tugas ini adalah sebagai berikut:
+
+Membuat minimal satu halaman baru pada aplikasi, yaitu halaman formulir tambah produk baru dengan ketentuan sebagai berikut:
+Memakai minimal tiga elemen input, yaitu name, price, dan description.
+Tambahkan elemen input lain sesuai dengan model pada aplikasi Football Shop Django yang telah kamu buat (misalnya thumbnail, category, dan isFeatured).
+Memiliki sebuah tombol Save.
+Setiap elemen input di formulir juga harus divalidasi dengan ketentuan sebagai berikut:
+Setiap elemen input tidak boleh kosong.
+Setiap elemen input harus berisi data dengan tipe data atribut modelnya.
+
+Mengarahkan pengguna ke halaman form tambah produk baru ketika menekan tombol Tambah Produk pada halaman utama.
+
+Memunculkan data sesuai isi dari formulir yang diisi dalam sebuah pop-up setelah menekan tombol Save pada halaman form tambah produk baru.
+
+Membuat sebuah drawer pada aplikasi dengan ketentuan sebagai berikut:
+Drawer minimal memiliki dua buah opsi, yaitu Halaman Utama dan Tambah Produk.
+Ketika memilih opsi Halaman Utama, aplikasi akan mengarahkan pengguna ke halaman utama.
+Ketika memilih opsi Tambah Produk, aplikasi akan mengarahkan pengguna ke halaman form tambah produk baru.
+
+Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya dan tambahkan subjudul untuk setiap tugas):
+
+    Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
+
+    Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?
+
+    Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.
+
+    Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
+
+Melakukan add, commit, dan push ke GitHub.
