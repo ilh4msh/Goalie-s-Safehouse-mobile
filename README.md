@@ -164,6 +164,7 @@ untuk halaman detail akan menampilkan seluruh atribut pada model item yang data 
 Melakukan filter pada halaman daftar item dengan hanya menampilkan item yang terasosiasi dengan pengguna yang login.
 
 Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+
     Jelaskan mengapa kita perlu membuat model Dart saat mengambil/mengirim data JSON? Apa konsekuensinya jika langsung memetakan Map<String, dynamic> tanpa model (terkait validasi tipe, null-safety, maintainability)?
     Penggunaan model Dart diperlukan karena JSON mentah dalam bentuk Map<String, dynamic> tidak memberikan jaminan keamanan tipe, konsistensi struktur, maupun kejelasan data yang diproses aplikasi. Tanpa model, Flutter tidak bisa mendeteksi apakah server mengirim tipe yang salah, field yang hilang, atau nilai null dan semua error itu baru muncul saat runtime, bukan saat compile. Dengan model, struktur data terdokumentasi dengan jelas, parsing lebih aman, dan perubahan API lebih mudah dikelola karena hanya perlu memperbarui satu representasi data, bukan seluruh bagian aplikasi yang memanfaatkan map mentah. Mengabaikan model mungkin terlihat lebih cepat, tetapi pada proyek yang tumbuh, itu membuat kode rentan, sulit dipelihara, dan penuh potensi bug tersembunyi.
 
