@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:goalie_s_safehouse_mobile/widgets/left_drawer.dart';
+import 'dart:convert';
+import 'package:provider/provider.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:goalie_s_safehouse_mobile/screens/menu.dart';
 
 class ProductFormPage extends StatefulWidget {
   const ProductFormPage({super.key});
@@ -40,6 +44,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
 
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
     return Scaffold(
       appBar: AppBar(
         title: const Center(
@@ -336,49 +341,42 @@ class _ProductFormPageState extends State<ProductFormPage> {
                       backgroundColor:
                           MaterialStateProperty.all(Colors.indigo),
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              title: const Text('Produk berhasil disimpan!'),
-                              content: SingleChildScrollView(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Nama: $_name'),
-                                    Text('Deskripsi: $_description'),
-                                    Text('Kategori: $_category'),
-                                    Text('Harga: Rp ${_price.toString()}'),
-                                    Text('Stok: $_stock'),
-                                    Text('Ukuran: ${_size.toUpperCase()}'),
-                                    Text('Thumbnail: $_thumbnail'),
-                                  ],
-                                ),
-                              ),
-                              actions: [
-                                TextButton(
-                                  child: const Text('OK'),
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                    _formKey.currentState!.reset();
-                                    // Reset ke nilai default
-                                    setState(() {
-                                      _name = "";
-                                      _description = "";
-                                      _category = "jersey";
-                                      _thumbnail = "";
-                                      _price = 0;
-                                      _stock = 0;
-                                      _size = "l";
-                                    });
-                                  },
-                                ),
-                              ],
+                        final response = await request.postJson(
+                              "http://localhost:8000/create-product-flutter/",
+                              jsonEncode({
+                                "name": _name,
+                                "description": _description,
+                                "category": _category,
+                                "thumbnail": _thumbnail,
+                                "price": _price,
+                                "stock": _stock,
+                                "size": _size,
+                              }),
                             );
-                          },
-                        );
+
+                        if (!context.mounted) return;
+
+                        if (response['status'] == 'success') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text("Product successfully saved!"),
+                            ),
+                          );
+
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => MyHomePage()),
+                          );
+                          
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text("Something went wrong, please try again."),
+                            ),
+                          );
+                        }
                       }
                     },
                     child: const Text(

@@ -137,3 +137,33 @@ Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan mo
     Warna tema pada aplikasi Football Shop disesuaikan melalui pengaturan ThemeData dan lebih spesifiknya di color theme. hal ini dilakukan agar warna selaras dengan identitas brand. Warna utama digunakan pada AppBar, tombol, dan ikon, sedangkan warna sekunder diterapkan pada elemen pendukung seperti teks atau highlight. Dengan penerapan warna yang konsisten di seluruh halaman, aplikasi tampil profesional dan mudah dikenali sebagai bagian dari brand Football Shop.
 
 Melakukan add, commit, dan push ke GitHub.
+
+## TUGAS 9
+Memastikan deployment proyek tugas Django kamu telah berjalan dengan baik.
+Mengimplementasikan fitur registrasi akun pada proyek tugas Flutter.
+Membuat halaman login pada proyek tugas Flutter.
+Mengintegrasikan sistem autentikasi Django dengan proyek tugas Flutter.
+Membuat model kustom sesuai dengan proyek aplikasi Django.
+Membuat halaman yang berisi daftar semua item yang terdapat pada endpoint JSON di Django yang telah kamu deploy.
+Tampilkan name, price, description, thumbnail, category, dan is_featured dari masing-masing item pada halaman ini (Dapat disesuaikan dengan field yang kalian buat sebelumnya).
+Membuat halaman detail untuk setiap item yang terdapat pada halaman daftar Item.
+Halaman ini dapat diakses dengan menekan salah satu card item pada halaman daftar Item.
+Tampilkan seluruh atribut pada model item kamu pada halaman ini.
+Tambahkan tombol untuk kembali ke halaman daftar item.
+Melakukan filter pada halaman daftar item dengan hanya menampilkan item yang terasosiasi dengan pengguna yang login.
+
+Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+    Jelaskan mengapa kita perlu membuat model Dart saat mengambil/mengirim data JSON? Apa konsekuensinya jika langsung memetakan Map<String, dynamic> tanpa model (terkait validasi tipe, null-safety, maintainability)?
+
+    Apa fungsi package http dan CookieRequest dalam tugas ini? Jelaskan perbedaan peran http vs CookieRequest.
+    
+    Jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+    
+    Jelaskan konfigurasi konektivitas yang diperlukan agar Flutter dapat berkomunikasi dengan Django. Mengapa kita perlu menambahkan 10.0.2.2 pada ALLOWED_HOSTS, mengaktifkan CORS dan pengaturan SameSite/cookie, dan menambahkan izin akses internet di Android? Apa yang akan terjadi jika konfigurasi tersebut tidak dilakukan dengan benar?
+    
+    Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
+    
+    Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+    
+    Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+Melakukan add-commit-push ke GitHub.
